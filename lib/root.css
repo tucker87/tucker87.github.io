@@ -1,20 +1,76 @@
-.blocks > * {
-  display: inline-block;
-  padding: 15px;
+body {
+  text-align: center;
+  margin: 0;
+  font-family: sans-serif;
+
+  background: linear-gradient(135deg, rgba(255,0,0,1) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 90%, rgba(255,0,0,1) 100%);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 5px 20px;
   border: 1px solid #ccc;
   text-decoration: none;
   text-align: center;
-  width: 150px;
+  width: 200px;
   margin: 5px;
   vertical-align: top;
+  transition: 0.3s;
 }
-.blocks > * .title {
+
+.card.wide {
+  width: 250px;
+}
+
+.card:hover {
+  border: 5px solid red;
+}
+
+.card .title {
   color: black;
   font-size: large;
   padding: 5px;
   text-decoration: underline;
+  font-weight: bold;
+  text-decoration-color: red;
 }
-.blocks > * .desc {
+.card .desc {
   display: block;
   color: #444;
+  margin-bottom: 5px;
+}
+
+.icons {
+  margin-top: auto;
+}
+
+icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+icon.c-sharp {
+  background-image: url('/lib/c-sharp.png');
+}
+
+icon.github {
+  background-image: url('/lib/github.png');
+}
+
+icon.js {
+  background-image: url('/lib/js.png');
+}
+
+icon.vue {
+  background-image: url('/lib/vue.png');
 }
