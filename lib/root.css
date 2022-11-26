@@ -1,6 +1,6 @@
 :root {
   --bg-color: rgb(20, 20, 20);
-  --header-footer-height: 70px;
+  --header-footer-height: 100px;
 }
 
 body {
@@ -35,22 +35,21 @@ hr {
 
 .header,
 .footer {
+  background: radial-gradient(rgba(220,20,20,0.8) 0%, rgba(20,20,22,0) 90%);
   height: var(--header-footer-height);
   position: fixed;
   text-align: center;
-  top: 0;
   width: 100%;
   z-index: 4;
 }
 
 .header {
-  background: linear-gradient(180deg, rgba(220,20,20,1) 0%, rgba(150,20,20,1) 25%, rgba(20,20,20,0) 100%);
-  top: 0;
+  position: absolute;
+  top: calc(var(--header-footer-height) / 2 * -1);
 }
 
 .footer {
-  background: linear-gradient(0deg, rgba(220,20,20,1) 0%, rgba(150,20,20,1) 25%, rgba(20,20,20,0) 100%);
-  top: calc(100% - var(--header-footer-height));
+  bottom: calc(var(--header-footer-height) / 2 * -1);
 }
 
 .outer {
@@ -178,4 +177,16 @@ icon.js {
 
 icon.vue {
   background-image: url('/lib/vue.png');
+}
+
+icon.vb {
+  background-image: url('/lib/vb.png');
+}
+
+icon.ko {
+  background-image: url('/lib/ko.png');
+}
+
+icon.jq {
+  background-image: url('/lib/jQuery.png');
 }
