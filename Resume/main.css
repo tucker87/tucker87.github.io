@@ -1,0 +1,196 @@
+@font-face {
+    font-family: CenturyGothic;
+    src: url(CenturyGothic.ttf);
+ }
+
+html {
+    font-family: CenturyGothic,sans-serif;
+    --highlight-color: #1a409a;
+    font-size: 11pt;
+    width: 800px;
+    height: 1040px;
+    margin: auto;
+    background: lightgray;
+}
+
+body {
+    background: white;
+    padding: 20px;
+    margin: 0;
+}
+
+a:visited {
+    color: rgb(0, 0, 238);
+}
+
+ul {
+    padding-inline-start: 15px;
+}
+
+.header {
+    background: var(--highlight-color);
+    height: 75px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.header::after {
+    display: block;
+    content: '';
+    background-color: var(--highlight-color);
+    width: 20px;
+    aspect-ratio: 1;
+    rotate: 45deg;
+    position: absolute;
+    bottom: -10px;
+    left: 40px;
+}
+
+.sub-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 40px;
+    margin-left: 10px;
+}
+
+.name {
+    color: var(--highlight-color);
+    font-weight: bold;
+    font-size: 34pt;
+    display: block;
+}
+
+.who-am-i .title {
+    color: var(--highlight-color);
+    font-style: italic;
+}
+
+.title {
+    font-size: 14pt;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: .33fr 1fr;
+    gap: 20px;
+}
+
+.section > .title {
+    font-size: 16pt;
+    font-weight: bold;
+    color: var(--highlight-color);
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.info > .section {
+    margin-bottom: 30px;
+}
+
+.info > .section .item {
+    margin-bottom: 8px;
+}
+
+.info > .section .item .title {
+    font-weight: bold;
+}
+
+
+.info .section .item .score {
+    position: relative;
+}
+
+.info .section .item .score::before {
+    content: '▣▣▣▣▣';
+    display: block;
+    position: absolute;
+    color: #ccc;
+}
+
+.info .section .item .score::after {
+    display: block;
+    position: absolute;
+    color: var(--highlight-color);
+}
+
+.info .section .item .score.score-1::after {
+    content: '▣';
+}
+
+.info .section .item .score.score-2::after {
+    content: '▣▣';
+}
+
+.info .section .item .score.score-3::after {
+    content: '▣▣▣';
+}
+
+.info .section .item .score.score-4::after {
+    content: '▣▣▣▣';
+}
+
+.info .section .item .score.score-5::after {
+    content: '▣▣▣▣▣';
+}
+
+.info .section .item .score-5::before:nth-letter(1) {
+    color: var(--highlight-color);
+}
+
+.info > .section.contact .item .title {
+    display: block;
+}
+
+.info .section.skills .item {
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+}
+
+.history {
+    border-left: 1px solid #ccc;
+}
+
+.history > .section {
+    padding-left: 30px;
+}
+
+.history > .section > .title::before {
+    display: block;
+    content: '';
+    background-color: var(--highlight-color);
+    position: absolute;
+    left: -28px;
+    top: 7px;
+    width: 30px;
+    aspect-ratio: 1;
+    clip-path: path('m 0 0 h 15 l 10 10 l -10 10 h -15 z');
+}
+
+.history > .section .item {
+    display: grid;
+    grid-template-columns: .25fr 1fr;
+    padding-bottom: 20px;
+}
+
+.history .date {
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.history .title {
+    display: block;
+    font-weight: bold;
+}
+
+@media print {
+    html {
+        background: white;
+    }
+}
