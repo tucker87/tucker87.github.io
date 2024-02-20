@@ -192,5 +192,6 @@ ul {
 @media print {
     html {
         background: white;
+        -webkit-print-color-adjust: exact;
     }
 }
