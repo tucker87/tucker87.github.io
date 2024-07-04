@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    background-color: #13181c;
+    color: white;
+    font-family: IBM Plex Mono,Menlo,DejaVu Sans Mono,Lucida Console,monospace;
+}
+
+a {
+    color: white;
+}
+
+header {
+    position: sticky;
+    background-color: #0f1117;
+    color: white;
+    padding: 20px;
+    font-size: large;
+    top: 0;
+    z-index: 100;
+}
+
+.content {
+    margin: auto;
+    max-width: 1900px;
+}
+
+p {
+    text-align: center;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 10px;
+}
+
+@media only screen and (max-width: 1910px) {
+    section {
+        grid-template-columns: 1fr;
+    }
+}
+
+h2, pre {
+    margin: unset;
+}
+
+.target {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 1fr;
+    gap: 20px;
+    margin: 0 auto;
+    background-color: #212a32;
+    border-radius: 20px;
+    padding: 10px;
+    min-width: 910px;
+    box-sizing: border-box;
+    height: 100%;
+    align-items: start;
+}
+
+.target h1 {
+    grid-column: 1 / span 2;
+}
+
+.solution {
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    gap: 5px;
+    max-width: 600px;
+}
+
+.result {
+    margin-left: auto;
+    height: 100%;
+}
+
+.result iframe {
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    border: none;
+    position: sticky;
+    top: 65px;
+    border: 1px solid white;
+}
+
+code.hljs {
+    background: rgb(0 29 36);
+}
