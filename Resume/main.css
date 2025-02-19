@@ -31,12 +31,42 @@ ul {
     background: var(--highlight-color);
     height: 75px;
     color: white;
-    display: flex;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
-    padding-left: 20px;
+    justify-content: space-between;
+    padding: 0 20px;
     border-radius: 0 0 10px 10px;
     margin-bottom: 10px;
     position: relative;
+}
+
+.header::after {
+    display: block;
+    content: '';
+    background-color: var(--highlight-color);
+    width: 20px;
+    aspect-ratio: 1;
+    rotate: 45deg;
+    position: absolute;
+    bottom: -10px;
+    left: 40px;
+}
+
+.header > div {
+    text-align: center;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header a {
+    display: contents;
+    color: white;
 }
 
 .header::after {
@@ -187,6 +217,10 @@ ul {
 .history .title {
     display: block;
     font-weight: bold;
+}
+
+icon {
+    margin: 0 5px;
 }
 
 @media print {

@@ -1,0 +1,44 @@
+icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  icon.c-sharp {
+    background-image: url('/lib/c-sharp.png');
+  }
+  
+  icon.github {
+    background-image: url('/lib/github.png');
+  }
+  
+  icon.js {
+    background-image: url('/lib/js.png');
+  }
+  
+  icon.vue {
+    background-image: url('/lib/vue.png');
+  }
+  
+  icon.vb {
+    background-image: url('/lib/vb.png');
+  }
+  
+  icon.ko {
+    background-image: url('/lib/ko.png');
+  }
+  
+  icon.jq {
+    background-image: url('/lib/jQuery.png');
+  }
+  
+  icon.css3 {
+    background-image: url('/lib/css3.png');
+  }
+
+  icon.linkedIn {
+    background-image: url('/lib/linked-in.png');
+  }
