@@ -110,6 +110,7 @@ ul {
     gap: 20px;
 }
 
+.projects > .title,
 .section > .title {
     font-size: 16pt;
     font-weight: bold;
@@ -187,10 +188,12 @@ ul {
     border-left: 1px solid #ccc;
 }
 
+.projects,
 .history > .section {
     padding-left: 30px;
 }
 
+.projects > .title::before,
 .history > .section > .title::before {
     display: block;
     content: '';
@@ -223,9 +226,51 @@ icon {
     margin: 0 5px;
 }
 
+section:not(:first-of-type) {
+    position: relative;
+    padding-top: 50px;
+    break-inside: avoid;
+    break-after: always;
+}
+
+section::before {
+    width: 100%;
+    background-color: #ccc;
+    height: 1px;
+    position: absolute;
+    content:'';
+    top: 20px;
+}
+
+.section .description {
+    display: block;
+    margin-left: 20px;
+}
+
+.section .description:not(:first-of-type) {
+    margin-top: 5px;
+}
+
+.projects ul {
+    margin-left: 20px;
+    columns: 3;
+}
+
+.projects .section {
+    border-bottom: solid 1px #ccc;
+}
+
 @media print {
     html {
         background: white;
         -webkit-print-color-adjust: exact;
+    }
+
+    body {
+        padding-bottom: 0;
+    }
+
+    section::before {
+        display: none;
     }
 }
