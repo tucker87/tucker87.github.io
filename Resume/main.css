@@ -84,7 +84,7 @@ ul {
 .sub-header {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     margin-left: 10px;
 }
 
@@ -102,6 +102,10 @@ ul {
 
 .title {
     font-size: 14pt;
+}
+
+.description {
+    font-size: 17px;
 }
 
 .content {
