@@ -103,7 +103,7 @@ ul {
     font-size: 14pt;
 }
 
-.description {
+.sub-header .description {
     font-size: 17px;
 }
 
@@ -271,6 +271,10 @@ section::before {
 
     body {
         padding-bottom: 0;
+    }
+
+    section {
+        padding: none;
     }
 
     section::before {
