@@ -90,7 +90,8 @@ h3 {
   gap: 8px;
   justify-content: center;
   max-width: 916px;
-  margin: 20px auto;
+  margin: 0 auto;
+  padding: 20px 0;
 
   &:hover .card:after {
     opacity: 1;
