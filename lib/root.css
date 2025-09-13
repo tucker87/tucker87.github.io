@@ -1,6 +1,7 @@
 :root {
-  --bg-color: rgb(20, 20, 20);
-  --header-footer-height: 100px;
+  --bg-color: #141414;
+  --accent-color: #c90909;
+  --header-height: 50px;
 }
 
 body {
@@ -16,21 +17,21 @@ h1,
 h2 {
   background: linear-gradient(
     90deg,
-    transparent,
-    black 30%,
-    black 70%,
-    transparent
+    #0000,
+    #141414aa 30%,
+    #141414aa 70%,
+    #0000
   );
 }
 
 h1 {
   text-align: center;
-  line-height: 50px;
+  line-height: var(--header-height);
   margin: 0;
 }
 
 h2 {
-  color: #c90909;
+  color: var(--accent-color);
   margin: 0;
   position: sticky;
   top: 0;
@@ -58,8 +59,8 @@ h3 {
   text-align: center;
   margin: 0 auto;
   overflow-x: hidden;
-  height: calc(100% - 50px);
-  scrollbar-color: #c90909 #0000;
+  height: calc(100% - var(--header-height));
+  scrollbar-color: var(--accent-color) #0000;
   perspective: 1px;
 
   scroll-timeline-name: --parallax-scroll;
@@ -90,10 +91,10 @@ h3 {
   justify-content: center;
   max-width: 916px;
   margin: 20px auto;
-}
 
-.cards:hover .card:after {
-  opacity: 1;
+  &:hover .card:after {
+    opacity: 1;
+  }
 }
 
 .card {
@@ -104,69 +105,81 @@ h3 {
   position: relative;
   width: 300px;
   transition: all 1000ms;
-}
 
-.card:hover::before {
-  opacity: 1;
-}
+  &:hover::before {
+    opacity: 1;
+  }
 
-.card::before,
-.card::after {
-  border-radius: inherit;
-  content: "";
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  transition: opacity 500ms;
-  width: 100%;
-}
+  &::before,
+  &::after {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 500ms;
+    width: 100%;
+  }
 
-.card::before {
-  background: radial-gradient(
-    800px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 0, 0, 0.3),
-    transparent 40%
-  );
-  z-index: 3;
-}
+  &::before {
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 0, 0, 0.3),
+      transparent 40%
+    );
+    z-index: 3;
+  }
 
-.card::after {
-  background: radial-gradient(
-    400px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 0, 0, 1),
-    transparent 40%
-  );
-  z-index: 1;
-}
+  &::after {
+    background: radial-gradient(
+      400px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 0, 0, 1),
+      transparent 40%
+    );
+    z-index: 1;
+  }
 
-.card > .card-content {
-  background-color: rgb(30, 30, 30, 0.5);
-  border-radius: inherit;
-  position: absolute;
-  inset: 4px;
-  z-index: 2;
+  &:hover {
+    height: 150px;
 
-  display: flex;
-  flex-direction: column;
-  padding: 5px 20px;
-}
+    .icons {
+      width: initial;
+    }
 
-.card > .card-content > .title {
-  color: white;
-  font-size: large;
-  padding: 5px;
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  font-weight: bold;
-  text-decoration-color: red;
-}
+    icon {
+      width: 32px;
+    }
+  }
 
-.card .desc {
-  display: block;
-  color: #999;
-  margin-bottom: 5px;
+  > .card-content {
+    background-color: rgb(30, 30, 30, 0.5);
+    border-radius: inherit;
+    position: absolute;
+    inset: 4px;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+  }
+
+  > .card-content > .title {
+    color: white;
+    font-size: large;
+    padding: 5px;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    font-weight: bold;
+    text-decoration-color: var(--accent-color);
+  }
+
+  .desc {
+    display: block;
+    color: #999;
+    margin-bottom: 5px;
+  }
 }
 
 .icons {
@@ -174,18 +187,6 @@ h3 {
   display: flex;
   transition: all 1000ms;
   margin: auto;
-}
-
-.card:hover {
-  height: 150px;
-
-  .icons {
-    width: initial;
-  }
-
-  icon {
-    width: 32px;
-  }
 }
 
 .desc {
@@ -200,36 +201,36 @@ icon {
   background-repeat: no-repeat;
   background-position: center;
   transition: all 1000ms;
-}
 
-icon.c-sharp {
-  background-image: url("/lib/c-sharp.png");
-}
+  &.c-sharp {
+    background-image: url("/lib/c-sharp.png");
+  }
 
-icon.github {
-  background-image: url("/lib/github.png");
-}
+  &.github {
+    background-image: url("/lib/github.png");
+  }
 
-icon.js {
-  background-image: url("/lib/js.png");
-}
+  &.js {
+    background-image: url("/lib/js.png");
+  }
 
-icon.vue {
-  background-image: url("/lib/vue.png");
-}
+  &.vue {
+    background-image: url("/lib/vue.png");
+  }
 
-icon.vb {
-  background-image: url("/lib/vb.png");
-}
+  &.vb {
+    background-image: url("/lib/vb.png");
+  }
 
-icon.ko {
-  background-image: url("/lib/ko.png");
-}
+  &.ko {
+    background-image: url("/lib/ko.png");
+  }
 
-icon.jq {
-  background-image: url("/lib/jQuery.png");
-}
+  &.jq {
+    background-image: url("/lib/jQuery.png");
+  }
 
-icon.css3 {
-  background-image: url("/lib/css3.png");
+  &.css3 {
+    background-image: url("/lib/css3.png");
+  }
 }
