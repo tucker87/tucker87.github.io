@@ -52,18 +52,26 @@ h3 {
   }
 }
 
-.header {
-  display: flex;
-  justify-content: center;
+.outer {
   align-items: center;
-  position: fixed;
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-  background: radial-gradient(#ccc 10px, transparent 55vh);
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  overflow-x: hidden;
+  height: calc(100% - 50px);
+  scrollbar-color: #c90909 #0000;
+  perspective: 1px;
+
+  scroll-timeline-name: --parallax-scroll;
 
   svg {
-    height: 90vh;
+    position: absolute;
+    z-index: -1;
+    transform: translate3d(-50%, -50%, -1px);
+    top: calc(var(--scrollHeight) / 2);
+    height: max(var(--scrollHeight), 150vw);
+    background: radial-gradient(#777 10px, transparent 55%);
+
     ellipse {
       fill: url(#Background);
       stroke: #fff5;
@@ -75,37 +83,13 @@ h3 {
   }
 }
 
-.footer {
-  background: radial-gradient(
-    rgba(220, 20, 20, 0.8) 0%,
-    rgba(20, 20, 22, 0) 90%
-  );
-  height: var(--header-footer-height);
-  position: fixed;
-  text-align: center;
-  z-index: 4;
-
-  bottom: calc(var(--header-footer-height) / 2 * -1);
-}
-
-.outer {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 0 auto;
-  overflow-y: scroll;
-  height: calc(100% - 50px);
-  scrollbar-color: #c90909 #0000;
-}
-
 .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
   max-width: 916px;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 .cards:hover .card:after {
